@@ -1,0 +1,110 @@
+using System;
+
+class Program
+{
+    static int GetLargestNumber(int a, int b)
+    {
+        return (a > b) ? a : b;
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter the first integer: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second integer: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        int largestNumber = GetLargestNumber(a, b);
+
+        Console.WriteLine("The largest number is " + largestNumber);
+    }
+}
+
+
+    
+
+//question 2
+using System;
+
+class Program
+{
+    static int GetLargestNumber(int a, int b)
+    {
+        return (a > b) ? a : b;
+    }
+
+    static int GetLargestNumber(int a, int b, int c, int d)
+    {
+        int max1 = GetLargestNumber(a, b);
+        int max2 = GetLargestNumber(c, d);
+        return GetLargestNumber(max1, max2);
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter the first integer: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second integer: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the third integer: ");
+        int c = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the fourth integer: ");
+        int d = Convert.ToInt32(Console.ReadLine());
+
+        int largestNumber = GetLargestNumber(a, b, c, d);
+
+        Console.WriteLine("The largest number is " + largestNumber);
+    }
+}
+ //question 3
+
+ using System;
+
+class Program
+{
+    static bool CheckAge(int birthYear)
+    {
+        int age = 2022 - birthYear;
+        return age >= 18;
+    }
+
+    static void CreateAccount()
+    {
+        Console.Write("Enter your username: ");
+        string username = Console.ReadLine();
+
+        Console.Write("Enter your password: ");
+        string password = Console.ReadLine();
+
+        Console.Write("Enter your password again: ");
+        string confirmPassword = Console.ReadLine();
+
+        Console.Write("Enter your birth year: ");
+        int birthYear = Convert.ToInt32(Console.ReadLine());
+
+        if (CheckAge(birthYear))
+        {
+            if (password == confirmPassword)
+            {
+                Console.WriteLine("Account is created successfully");
+            }
+            else
+            {
+                Console.WriteLine("Wrong password");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Could not create an account");
+        }
+    }
+
+    static void Main()
+    {
+        CreateAccount();
+    }
+}
